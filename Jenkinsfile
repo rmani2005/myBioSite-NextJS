@@ -17,7 +17,7 @@ agent any
             
             steps {
                 sh 'node -v'
-                sh 'npm install'
+               // sh 'npm install'
             }
         }
   
@@ -38,9 +38,14 @@ agent any
     stage('Push') {
       steps {
         sh 'echo "XXXXXXXXXXXXPushing the Docker hub image block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
-        sh 'docker push manikandanravi9/mybiositenextjs'
+        sh 'docker push manikandanravi9/mybiositenextjs:latest'
       }
     }
+    stage('Run in local host') {
+      steps {
+        sh 'echo "XXXXXXXXXXXXPushing the Docker hub image block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
+        sh 'docker run -d -p 3002:3000 manikandanravi9/mybiositenextjs:latest'
+      }
   }
 }
 		 
