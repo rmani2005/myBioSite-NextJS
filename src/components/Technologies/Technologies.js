@@ -1,5 +1,6 @@
 import React from 'react';
-import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
+import { DiFirebase, DiReact, DiZend, DiJava,DiJenkins, DiCloud9, DiAws, IoInfiniteSharp } from 'react-icons/di';
+import { BiInfinite } from 'react-icons/bi';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
@@ -8,43 +9,47 @@ const Technologies = () =>  (
     <SectionDivider divider />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-      I've worked with a range a technologies in the web development world.
-      From Back-end To Design
+      I've worked with a range of technologies in the GUI, SOA Automation using various tools 
+      and developed/custumized Automation framework and DevOps projects End to End.<br/>
+      Maintaining big automation and DevOps team as Lead automation engineer.
     </SectionText>
     <List>
       <ListItem>
         <picture>
-          <DiReact size="3rem" />
+          <DiJava size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
+          <ListTitle>Automation</ListTitle>
           <ListParagraph>
             Experiece with <br />
-            React.js
+            Java, Selenium,<br /> 
+            BDD Cucumber, <br />
+            KarateAPI & Tosca
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
         <picture>
-          <DiFirebase size="3rem" />
+          <BiInfinite size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>Back-End</ListTitle>
+          <ListTitle>DevOps</ListTitle>
           <ListParagraph>
             Experience with <br />
-            Node and Databases
+            GIT, Jenkins, Docker, K8s, <br/>
+            CI/CD Pipelines 
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
         <picture>
-          <DiZend size="3rem" />
+          <DiCloud9 size="3rem" />
         </picture>
         <ListContainer>
-          <ListTitle>UI/UX</ListTitle>
+          <ListTitle>Cloud Computing</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            tools like Figma
+            Experience with Major<br />
+             AWS DevOps Services
           </ListParagraph>
         </ListContainer>
       </ListItem>

@@ -1,3 +1,4 @@
+import Typed from 'typed.js';
 import Acomplishments from '../components/Acomplishments/Acomplishments';
 import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
 import Hero from '../components/Hero/Hero';
@@ -14,10 +15,11 @@ const Home = () => {
         <Hero />
         <BgAnimation />
       </Section>
-      <Projects />
+      <typed/>
       <Technologies />
       <Timeline />
       <Acomplishments />
+      <Projects />
     </Layout>
   );
 };

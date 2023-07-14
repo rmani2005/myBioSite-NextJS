@@ -33,6 +33,7 @@ export const BlogCard = styled.div`
 `;
 export const TitleContent = styled.div`
   text-align: center;
+  font-size: 15px;
   z-index: 20;
   width: 100%;
 
