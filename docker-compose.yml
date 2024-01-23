@@ -1,0 +1,5 @@
+services:
+  web:
+    image: manikandanravi9/mybiositenextjs:latest
+    ports:
+      - "3005:3000"

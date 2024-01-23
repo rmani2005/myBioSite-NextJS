@@ -28,7 +28,7 @@ agent any
         sh 'docker container stop $(docker ps -a -q -f status=running)'
       }step{
 	      sh 'echo "XXXXXXXXXXXXBuilding block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
-        sh 'docker build -t manikandanravi9/mybiositenextjs:latest .'
+        sh 'docker build -t manikandanravi9/mybiositenextjs:latest .docker build -t manikandanravi9/mybiositenextjs:latest -t manikandanravi9/mybiositenextjs:latest .'
         sh 'echo "XXXXXXXXXXXXBuilding block Completed XXXXXXXXXXXXXXXXXXXXXXXXx"'
       }
     }
@@ -41,13 +41,13 @@ agent any
     stage('Push the built docker image') {
       steps {
         sh 'echo "XXXXXXXXXXXXPushing the Docker hub image block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
-        sh 'docker push manikandanravi9/mybiositenextjs:latest'
+        sh 'docker image push manikandanravi9/mybiositenextjs:latest'
       }
     }
     stage('Run in local host of the local machine or Ec2 instance ') {
       steps {
         sh 'echo "XXXXXXXXXXXXPushing the Docker hub image block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
-        sh 'docker run -d -p 3002:3000 manikandanravi9/mybiositenextjs:latest'
+        sh 'docker run -d -p 80:3000 manikandanravi9/mybiositenextjs:latest'
       }
   }
 }
