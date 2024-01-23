@@ -17,7 +17,7 @@ const Hero = (props) => (
             <MyComponent/>
         </SectionTitle2>
         <SectionText>
-         I'm Automation & DevOps enthusiastic, having a experience & wider knowledge in GUI, API Automation, DevOps tools, pipeline, Cloud platform and many more projects!
+         I'm SDET & DevOps enthusiastic, having a experience & wider knowledge in Web, API Automation, DevOps tools, pipeline creation, Cloud platform!
         </SectionText>
         <Button>Download My Resume</Button>
       </LeftSection>

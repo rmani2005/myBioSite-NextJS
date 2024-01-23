@@ -8,7 +8,7 @@ const app = express()
 const mongoose = require('mongoose')
   
 // Connecting to local MongoDB
-mongoose.connect("mongodb://user:pass@localhost:27017/visitCounterDB", {
+mongoose.connect("mongodb+srv://manikandanravi:admin@manikandan.qpfshwg.mongodb.net", {
     useNewUrlParser: true
 });
   

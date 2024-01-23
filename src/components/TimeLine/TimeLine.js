@@ -46,7 +46,7 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-      I am Automation person who develope, customize, keep automating, intergrating the automation frameworks and Maintaining the automated pipeline for continuous 
+      I am Automation person who develop, customize, keep automating, intergrating the automation frameworks and maintaining the automated pipeline for continuous 
       delviering of various products.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>

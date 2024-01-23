@@ -118,5 +118,5 @@ export const TimeLineData = [
   { year: 2017, text: 'Started DevOps Journey', },
   { year: 2018, text: 'Become a Senior SDET DevOps Journey', },
   { year: 2021, text: 'Started my own platform', },
-  { year: 2023, text: 'Rocking as Principle SDET and DevOps engineer', }
+  { year: 2023, text: 'Rocking as Senior SDET and DevOps engineer', }
 ];

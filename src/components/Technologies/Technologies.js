@@ -9,9 +9,9 @@ const Technologies = () =>  (
     <SectionDivider divider />
     <SectionTitle>Technologies</SectionTitle>
     <SectionText>
-      I've worked with a range of technologies in the GUI, SOA Automation using various tools 
-      and developed/custumized Automation framework and DevOps projects End to End.<br/>
-      Maintaining big automation and DevOps team as Lead automation engineer.
+      I've worked with a range of technologies in the Web and API Automation using various tools 
+      and developed/customized Automation framework and created DevOps projects End to End.<br/>
+      Maintaining big automation and DevOps team as Lead Automation Engineer.
     </SectionText>
     <List>
       <ListItem>
@@ -49,7 +49,7 @@ const Technologies = () =>  (
           <ListTitle>Cloud Computing</ListTitle>
           <ListParagraph>
             Experience with Major<br />
-             AWS DevOps Services
+             AWS  Services
           </ListParagraph>
         </ListContainer>
       </ListItem>

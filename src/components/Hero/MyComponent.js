@@ -7,7 +7,7 @@ export default function MyComponent() {
 
   React.useEffect(() => {
     const typed = new Typed(el.current, {
-      strings:["Principle SDET", "Automation Engineer", "DevOps Engineer"],
+      strings:["Senior SDET", "Automation Engineer", "DevOps Engineer"],
       typeSpeed:80,
       backSpeed:80,
       backDelay:1000,
