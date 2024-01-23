@@ -24,7 +24,10 @@ agent any
   
     stage('Build the docker images') {
       steps {
-	sh 'echo "XXXXXXXXXXXXBuilding block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
+	      sh 'echo "XXXXXXXXXXXX Stopping the running containers XXXXXXXXXXXXXXXXXXXXXXXXx"'
+        sh 'docker container stop $(docker ps -a -q -f status=running)'
+      }step{
+	      sh 'echo "XXXXXXXXXXXXBuilding block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker build -t manikandanravi9/mybiositenextjs:latest .'
         sh 'echo "XXXXXXXXXXXXBuilding block Completed XXXXXXXXXXXXXXXXXXXXXXXXx"'
       }
