@@ -50,7 +50,6 @@ agent any
         sh 'docker run -d -p 80:3000 manikandanravi9/mybiositenextjs:latest'
       }
     }
-  }
    stage ('Starting Next job') 
          {
             steps 
@@ -79,6 +78,7 @@ agent any
             
             
         }
+  }
 
 
 }		 
