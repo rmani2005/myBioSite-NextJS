@@ -22,12 +22,14 @@ agent any
         }
     stage('Killing the docker images & Containers'){
       steps{
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 	      sh 'echo "XXXXXXXXXXXX Stopping the running containers XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker container stop $(docker ps -a -q -f status=running)'
         sh 'kill $(lsof -t -i:80)'
         sh 'docker rm $(docker ps -a -f status=exited -q)'
         sh 'docker rmi -f $(docker images -q "manikandanravi9/mybiositenextjs")'
         sh 'kill $(lsof -t -i:80)'
+        }
       }
     }
     stage('Build the docker images'){
