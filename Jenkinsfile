@@ -27,6 +27,7 @@ agent any
         {
           sh 'echo "XXXXXXXXXXXX Stopping the port XXXXXXXXXXXXXXXXXXXXXXXXx"'
           //sh 'kill $(lsof -t -i:80)'
+          //https://github.com/rmani2005/cypress-framework.git
         }
       }
     }
