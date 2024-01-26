@@ -48,7 +48,7 @@ agent any
       steps{
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
         {
-          sh 'docker image rm -f $(docker images -q "manikandanravi9/mybiositenextjs:latest")'
+          sh 'docker image rm -f $(docker images -q "manikandanravi9/mybiositenextjs")'
           sh 'docker image rm -f manikandanravi9/mybiositenextjs:latest'
         }
       }
