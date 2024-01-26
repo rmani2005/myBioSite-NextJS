@@ -20,13 +20,14 @@ agent any
                // sh 'npm install'
             }
         }
-  
-  
-    stage('Build the docker images') {
-      steps {
+    stage('Killing the docker images & Containers'){
+      steps{
 	      sh 'echo "XXXXXXXXXXXX Stopping the running containers XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker container stop $(docker ps -a -q -f status=running)'
-      }step{
+      }
+    }
+    stage('Build the docker images'){ 
+      step{
 	      sh 'echo "XXXXXXXXXXXXBuilding block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker build -t manikandanravi9/mybiositenextjs:latest -t manikandanravi9/mybiositenextjs:latest .'
         sh 'echo "XXXXXXXXXXXXBuilding block Completed XXXXXXXXXXXXXXXXXXXXXXXXx"'
@@ -72,14 +73,8 @@ agent any
                   echo 'This will run only if the state of the Pipeline has changed'
                   echo 'For example, if the Pipeline was previously failing but is now successful'
               }
-                
-            }
-            
-            
-            
+           }   
         }
   }
-
-
 }		 
 		 
