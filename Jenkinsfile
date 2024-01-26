@@ -43,10 +43,14 @@ agent any
       }
     }
     stage('Build the docker images'){
+
       steps{
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+        {
 	      sh 'echo "XXXXXXXXXXXXBuilding block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker build -t manikandanravi9/mybiositenextjs:latest -t manikandanravi9/mybiositenextjs:latest .'
         sh 'echo "XXXXXXXXXXXXBuilding block Completed XXXXXXXXXXXXXXXXXXXXXXXXx"'
+      }
       }
     }
     stage('Login to DockerHub') {
@@ -55,7 +59,7 @@ agent any
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
-    stage('Push the built docker image') {
+    stage('Push the built docker image to Docker hub repo with tagging') {
       steps {
         sh 'echo "XXXXXXXXXXXXPushing the Docker hub image block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker image push manikandanravi9/mybiositenextjs:latest'
@@ -63,8 +67,11 @@ agent any
     }
     stage('Run in local host of the local machine or Ec2 instance ') {
       steps {
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+        {
         sh 'echo "XXXXXXXXXXXXPushing the Docker hub image block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker run -d -p 80:3000 manikandanravi9/mybiositenextjs:latest'
+      }
       }
     }
    stage('Starting Next job') 
