@@ -26,7 +26,7 @@ agent any
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
         {
           sh 'echo "XXXXXXXXXXXX Stopping the port XXXXXXXXXXXXXXXXXXXXXXXXx"'
-          sh 'kill $(lsof -t -i:80)'
+          //sh 'kill $(lsof -t -i:80)'
         }
       }
     }
