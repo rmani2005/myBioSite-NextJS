@@ -49,7 +49,37 @@ agent any
         sh 'echo "XXXXXXXXXXXXPushing the Docker hub image block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker run -d -p 80:3000 manikandanravi9/mybiositenextjs:latest'
       }
+    }
   }
-}
+   stage ('Starting Next job') 
+         {
+            steps 
+            {
+  				  build job: "TestAutomationFramework", wait: false   
+            }            
+            post 
+            {
+  	 			  success 
+            {
+            echo 'Successfully!'
+            } 
+		        failure {
+		            echo 'Failed!'
+		        }
+		        unstable {
+		            echo 'This will run only if the run was marked as unstable'
+		        }
+		        changed {
+		            echo 'This will run only if the state of the Pipeline has changed'
+		            echo 'For example, if the Pipeline was previously failing but is now successful'
+		        }
+                
+            }
+            
+            
+            
+        }
+
+
 }		 
 		 
