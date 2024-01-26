@@ -49,7 +49,6 @@ agent any
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
         {
           sh 'docker rm -f $(docker images -q "manikandanravi9/mybiositenextjs")'
-          //git --version
         }
       }
     }
