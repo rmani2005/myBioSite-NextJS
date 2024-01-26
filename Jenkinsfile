@@ -37,9 +37,18 @@ agent any
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
         {
           sh 'echo "XXXXXXXXXXXX Stopping the running containers XXXXXXXXXXXXXXXXXXXXXXXXx"'
-          sh 'docker container stop $(docker ps -a -q -f status=running)'
+          sh 'docker container stop $(docker images -q "manikandanravi9/mybiositenextjs")'
           sh 'docker rm $(docker ps -a -f status=exited -q)'
-          sh 'docker rmi -f $(docker images -q "manikandanravi9/mybiositenextjs")'
+          sh 'docker rm -f $(docker images -q "manikandanravi9/mybiositenextjs")'
+        }
+      }
+    }
+    stage('Killing the docker images & Containers')
+    {
+      steps{
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+        {
+          sh 'docker rm -f $(docker images -q "manikandanravi9/mybiositenextjs")'
         }
       }
     }
