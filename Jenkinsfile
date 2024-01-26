@@ -20,20 +20,25 @@ agent any
                // sh 'npm install'
             }
         }
-    stage('Killing the ports'){
+    stage('Killing the ports')
+    {
       steps{
-        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-	      sh 'echo "XXXXXXXXXXXX Stopping the running containers XXXXXXXXXXXXXXXXXXXXXXXXx"'
-        sh 'kill $(lsof -t -i:80)'
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+        {
+          sh 'echo "XXXXXXXXXXXX Stopping the port XXXXXXXXXXXXXXXXXXXXXXXXx"'
+          sh 'kill $(lsof -t -i:80)'
         }
       }
-    }stage('Killing the docker images & Containers'){
+    }
+    stage('Killing the docker images & Containers')
+    {
       steps{
-        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-	      sh 'echo "XXXXXXXXXXXX Stopping the running containers XXXXXXXXXXXXXXXXXXXXXXXXx"'
-        sh 'docker container stop $(docker ps -a -q -f status=running)'
-        sh 'docker rm $(docker ps -a -f status=exited -q)'
-        sh 'docker rmi -f $(docker images -q "manikandanravi9/mybiositenextjs")'
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
+        {
+          sh 'echo "XXXXXXXXXXXX Stopping the running containers XXXXXXXXXXXXXXXXXXXXXXXXx"'
+          sh 'docker container stop $(docker ps -a -q -f status=running)'
+          sh 'docker rm $(docker ps -a -f status=exited -q)'
+          sh 'docker rmi -f $(docker images -q "manikandanravi9/mybiositenextjs")'
         }
       }
     }
@@ -45,7 +50,7 @@ agent any
       }
     }
     stage('Login to DockerHub') {
-      steps {
+      steps{
        sh 'echo "XXXXXXXXXXXXDocker hub loginstarted XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
