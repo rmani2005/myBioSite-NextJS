@@ -31,7 +31,7 @@ agent any
         }
       }
     }
-    stage('Killing the docker images & Containers')
+    stage('Killing the docker Containers')
     {
       steps{
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
@@ -43,7 +43,7 @@ agent any
         }
       }
     }
-    stage('Killing the docker images & Containers')
+    stage('Removing the docker images')
     {
       steps{
         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') 
