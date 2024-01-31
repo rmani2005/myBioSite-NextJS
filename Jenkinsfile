@@ -93,7 +93,7 @@ agent any
         {
         sh 'echo "XXXXXXXXXXXXPushing the Docker hub image block started XXXXXXXXXXXXXXXXXXXXXXXXx"'
         sh 'docker pull manikandanravi9/mybiositenextjs:latest'
-        sh 'docker run -d -p 80:3000 manikandanravi9/mybiositenextjs:latest'
+        sh 'docker run -d -p 3002:3000 manikandanravi9/mybiositenextjs:latest'
       }
       }
     }
