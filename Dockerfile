@@ -9,6 +9,7 @@ WORKDIR /usr/src/app
 COPY package.json ./
 
 RUN npm install
+RUN npm install && npm install typescript@4.5.2
 # If you are building your code for production
 # RUN npm ci --omit=dev
 
